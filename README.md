@@ -20,5 +20,6 @@ Clone the repository to your local machine.
 Open the index.html file in a web browser to view the form.
 To edit styles, modify the css/style.css file.
 For form logic, see the js/script.js file.
+
 Usage
 Fill in the email and password fields according to the validation criteria. If the input does not meet the criteria, an error message will be displayed. Once all inputs are valid, a success message appears.
