@@ -1,92 +1,110 @@
+/* General Style Reset */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  box-sizing: border-box; /* Ensures that padding and borders are included in total width and height */
+  font-family: "Poppins", sans-serif; /* Sets a default font for the entire page */
 }
 
+/* Body Style */
 body {
-  min-height: 100vh;
+  min-height: 100vh; /* Sets minimum height to the full viewport height */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f4f7f6; /* Soft light background */
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  background: #f4f7f6; /* Sets a soft light background color */
 }
 
+/* Container for the Form */
 .container {
   position: relative;
-  max-width: 370px;
-  width: 100%;
-  padding: 25px;
-  border-radius: 8px;
-  background-color: #ffffff; /* White container background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  max-width: 370px; /* Maximum width of the container */
+  width: 100%; /* Responsive width */
+  padding: 25px; /* Padding inside the container */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #ffffff; /* White background for the form container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth and prominence */
 }
 
+/* Styling for Header inside the Container */
 .container header {
   font-size: 22px;
-  font-weight: 600;
-  color: #333; /* Darker text for contrast */
+  font-weight: 600; /* Bold font weight for header */
+  color: #333; /* Darker text color for contrast */
+  text-align: center; /* Center text horizontally */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
 }
-
+ 
+/* Margin for Form inside Container */
 .container form {
-  margin-top: 30px;
+  margin-top: 30px; /* Space above the form */
 }
 
+/* Styling for each Field in the Form */
 form .field {
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Space between each field */
 }
 
+/* Input Field Container */
 form .input-field {
-  position: relative;
+  position: relative; /* Allows absolute positioning of child elements */
   height: 55px;
-  width: 100%;
+  width: 100%; /* Full width of the parent */
 }
 
+/* Styling for Input Elements */
 .input-field input {
-  height: 100%;
+  height: 90%;
   width: 100%;
-  outline: none;
+  outline: none; /* Removes the default focus outline */
   border: none;
-  border-radius: 8px;
-  padding: 0 15px;
-  background: #eceff1; /* Light grey input field */
-  color: #333; /* Dark text for readability */
+  border-radius: 15px; /* Rounded corners for input fields */
+  padding: 0 15px; /* Padding inside the input field */
+  background: #eceff1; /* Light grey background for input fields */
+  color: #333; /* Dark text color for readability */
 }
 
+/* Style for Input Fields with Validation Errors */
 .invalid input {
-  border-color: #ff6b6b; /* Soft red for errors */
+  border-color: #ff6b6b; /* Soft red border color indicates error */
 }
 
+/* Style for Show/Hide Icon in Password Fields */
 .input-field .show-hide {
   position: absolute;
   right: 13px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* Center vertically */
   font-size: 18px;
-  color: #a2a2a2; /* Soft grey for icons */
+  color: #a2a2a2; /* Soft grey color for the icon */
   cursor: pointer;
   padding: 3px;
 }
 
+/* Error Message Styling */
 .field .error {
   display: flex;
-  align-items: center;
+  align-items: center; /* Aligns icon and text */
   margin-top: 6px;
-  color: #ff6b6b;
+  color: #ff6b6b; /* Red color for error messages */
   font-size: 13px;
-  display: none;
+  display: none; /* Hidden by default */
 }
 
+/* Display Error Message when Field is Invalid */
 .invalid .error {
-  display: flex;
+  display: flex; /* Show error message */
 }
 
+/* Icon in Error Messages */
 .error .error-icon {
   margin-right: 6px;
   font-size: 15px;
 }
 
+/* Special Case for Password Field Error Alignment */
 .create-password .error {
   align-items: flex-start;
 }
@@ -95,90 +113,98 @@ form .input-field {
   margin-top: 4px;
 }
 
+/* Button Container Style */
 .button {
-  margin: 25px 0 6px;
+  margin: 25px 0 6px; /* Margin around the button */
 }
 
+/* Submit Button Style */
 .button input {
   color: #fff;
   font-size: 16px;
   font-weight: 400;
-  background-color: #7ed957; /* Light green button */
-  cursor: pointer;
-  transition: all 0.3s ease;
+  background-color: #7ed957; /* Light green background for the button */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
   border: none;
   border-radius: 8px;
 }
 
+/* Hover Effect for Button */
 .button input:hover {
-  background-color: #6ecf49; /* Slightly darker on hover */
+  background-color: #6ecf49; /* Slightly darker green on hover */
 }
 
-/* Styles for the Success Message and Animated Checkmark */
+/* Success Message Style */
 .success-message {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Center in the viewport */
   text-align: center;
-  z-index: 1000;
+  z-index: 1000; /* Ensures it's above other elements */
 }
 
+/* Style for Checkmark Circle in Success Message */
 .checkmark-circle {
-  width: 150px;
-  height: 150px;
+  width: 150px; /* Set width of the circle */
+  height: 150px; /* Set height of the circle */
   position: relative;
-  display: inline-block;
+  display: inline-block; /* Allows the element to be inline but block-level */
   vertical-align: middle;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0px 0px 24px 0px rgba(34, 60, 80, 0.2);
+  border-radius: 50%; /* Makes the element circular */
+  background: #fff; /* White background for the circle */
+  box-shadow: 0px 0px 24px 0px rgba(34, 60, 80, 0.2); /* Adds a subtle shadow for depth */
 }
 
+/* Style for Checkmark inside Circle */
 .checkmark {
-  border-radius: 5px;
-  border: 5px solid #4bb543;
-  border-top: none;
-  border-right: none;
-  height: 75px;
-  width: 37px;
-  transform: rotate(-45deg);
-  margin-left: 56px;
-  margin-top: 38px;
-  animation: drawCheckmark 0.4s ease;
+  border-radius: 5px; /* Slightly rounded edges for the checkmark */
+  border: 5px solid #4bb543; /* Solid green border to form the checkmark */
+  border-top: none; /* Removes top border */
+  border-right: none; /* Removes right border */
+  height: 75px; /* Height of the checkmark */
+  width: 37px; /* Width of the checkmark */
+  transform: rotate(-45deg); /* Rotates the checkmark to simulate drawing */
+  margin-left: 56px; /* Horizontal positioning */
+  margin-top: 38px; /* Vertical positioning */
+  animation: drawCheckmark 0.4s ease; /* Animation for drawing the checkmark */
 }
 
+/* Keyframes for Checkmark Drawing Animation */
 @keyframes drawCheckmark {
   0% {
     height: 0;
     width: 0;
-    opacity: 1;
+    opacity: 1; /* Start with no checkmark visible */
   }
   20% {
     height: 0;
     width: 37px;
-    opacity: 1;
+    opacity: 1; /* Extend width first */
   }
   40% {
     height: 75px;
     width: 37px;
-    opacity: 1;
+    opacity: 1; /* Then extend height */
   }
   100% {
     height: 75px;
     width: 37px;
-    opacity: 1;
+    opacity: 1; /* Fully drawn checkmark */
   }
 }
 
+/* Style for Success Text */
 .success-text {
-  display: block;
-  margin-top: 20px;
-  font-size: 1.25rem;
-  color: #333;
+  display: block; /* Block-level element for the text */
+  margin-top: 20px; /* Space above the text */
+  font-size: 1.25rem; /* Font size for the text */
+  color: #333; /* Dark color for readability */
 }
 
+/* Utility Class to Hide Elements */
 .hidden {
-  display: none;
+  display: none; /* Hides any element with this class */
 }
